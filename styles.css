@@ -1,0 +1,7 @@
+.pin-style {
+    text-decoration: none !important;
+    color: #fff !important;
+    font-family: "Amazon Ember","Helvetica Neue",Roboto,Arial,sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+}
