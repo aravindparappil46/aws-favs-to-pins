@@ -1,41 +1,52 @@
-pins = window.localStorage.getItem('pinsCache');
 
-if (pins) {
-    addPinsToHeader(pins);
-} else {
-    createPinsFromFavs();
-    addPinsToHeader(pins);
-}
+// ------- Main Driver Begins ---------
+
+const pins = createPinsFromFavs();
+addPinsToHeader(pins);
+
+// ------- Main Driver Ends -----------
 
 /*
 * Given an array of pins, appends each of them to nav header
 */
 function addPinsToHeader(pins) {
     for (pin of pins) {
-        header = document.getElementById('awsc-nav-header').firstChild;
+        const header = document.getElementById('awsc-nav-header').firstChild;
         header.append(pin);
     }
 }
 
 /*
-* Iterate over favorites container ordered list
-* and create divs for the pins, containing the anchor element 
+* Iterate over favorites list elements
+* and create divs for the pins. Each div contains an anchor 
 * that navigates to respective AWS service.
-* Adds them to localStorage as well.
-* Returns an array of such pin divs 
+* Only adds first 7 fav services as pins
 */
 function createPinsFromFavs() {
-    favContainer = document.querySelector('div[data-testid="favorites-container"]').firstChild.cloneNode(true);
-    favs = favContainer.getElementsByTagName('li');
-    pins = []
+    const favs = getAllFavs()
+    let pins = []
 
     for (li of favs) {
-        favService = li.firstChild;
-        pin = document.createElement("div");
+        const favService = li.firstChild;
+
+        let pin = document.createElement("div");
         pin.className = "pin-style"
         pin.append(favService);
-        pins.append(pin)
+
+        if (pins.length < 7) {
+            pins.push(pin)
+        } else {
+            break;
+        }
     };
-    window.localStorage.setItem('pinsCache', pins)
     return pins;
+}
+
+/*
+* Clones favorite services from the menu
+* Returns an array of li elements
+*/
+function getAllFavs() {
+    const favContainer = document.querySelector('div[data-testid="favorites-container"]').firstChild.cloneNode(true);
+    return favContainer.getElementsByTagName('li');
 }
