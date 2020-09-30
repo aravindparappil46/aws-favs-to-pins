@@ -5,10 +5,21 @@
   "manifest_version": 2,
   "content_scripts": [
     {
-      "matches": ["https://console.aws.amazon.com/*"],
-      "css": ["styles.css"],
-      "js": ["aws-pins.js"]
+      "matches": [
+        "https://*.console.aws.amazon.com/*",
+        "https://phd.aws.amazon.com/*",
+        "https://*.console.amazonaws-us-gov.com/*",
+        "https://*.console.amazonaws.cn/*"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "js": [
+        "aws-pins.js"
+      ]
     }
   ],
-  "icons": {"128": "logo.png" }
+  "icons": {
+    "128": "logo.png"
+  }
 }
