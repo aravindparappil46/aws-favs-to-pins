@@ -1,9 +1,16 @@
 
 // ------- Main Driver Begins ---------
 
-const pins = createPinsFromFavs();
-addPinsToHeader(pins);
-
+/*
+* Check regularly until the required div appears on the page
+*/
+var checkExist = setInterval(function () {
+    if (document.querySelector('div[data-testid="favorites-container"]')) {
+        const pins = createPinsFromFavs();
+        addPinsToHeader(pins);
+        clearInterval(checkExist);
+    }
+}, 100);
 // ------- Main Driver Ends -----------
 
 /*
