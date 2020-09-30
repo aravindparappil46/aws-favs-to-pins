@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Pick up AWS services from favorites list and make them into pins on the header as they should be!",
   "manifest_version": 2,
+  "options_page": "options.html",
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
       "matches": [

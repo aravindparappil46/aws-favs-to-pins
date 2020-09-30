@@ -1,6 +1,13 @@
 
 // ------- Main Driver Begins ---------
 
+let pinCount;
+
+// Get 'count' value from local storage. Default back to 7
+chrome.storage.sync.get({ "count": 7 }, function (options) {
+    pinCount = options.count;
+});
+
 /*
 * Check regularly until the required div appears on the page
 */
@@ -39,8 +46,7 @@ function createPinsFromFavs() {
         let pin = document.createElement("div");
         pin.className = "pin-style"
         pin.append(favService);
-
-        if (pins.length < 7) {
+        if (pins.length < pinCount) {
             pins.push(pin)
         } else {
             break;
