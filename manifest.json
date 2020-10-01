@@ -1,6 +1,6 @@
 {
   "name": "AWS Favorites To Pins",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Pick up AWS services from favorites list and make them into pins on the header as they should be!",
   "manifest_version": 2,
   "content_scripts": [
