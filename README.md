@@ -1,7 +1,7 @@
 # aws-favs-to-pins
 Chrome extension to convert favorites in AWS console to pins on the navigation header (as it was before the UI update).
 
-Find it [here](https://chrome.google.com/webstore/detail/aws-favorites-to-pins/ncldghmgebieadpbefcmhicjepidmnhc/related) on the Chrome Web Store!
+Find it [here](https://chrome.google.com/webstore/detail/aws-favorites-to-pins/ncldghmgebieadpbefcmhicjepidmnhc/) on the Chrome Web Store!
 
 # How does it work?
 - All favorites in AWS Console are within a div that has a property called `data-testid="favorites-container"`
