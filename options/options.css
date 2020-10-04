@@ -1,0 +1,21 @@
+#content {
+    width: 70%;
+    margin: auto;
+}
+
+#messageSpan {
+    color: green;
+    font-size: smaller;
+}
+
+button {
+    margin-top: 10px;
+}
+
+.divOptions {
+    margin-bottom: 10px;
+}
+
+.labelNumberOfPins {
+    display: inherit;
+}

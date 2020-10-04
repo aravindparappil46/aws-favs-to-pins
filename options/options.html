@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="options.css">
+</head>
+
+<body>
+    <div id="content">
+        <div id="pinCount" class="divOptions">
+            <label for="count" class="labelNumberOfPins">Number of pins to display</label>
+            <input type="number" name="count" id="countInput" size=2 min=1 max=20 placeholder=7>
+        </div>
+
+        <div id="displayType" class="divOptions">
+            <label for="pinDisplayType">How would you like them to be displayed?</label>
+            <select name="pinDisplayType" id="pinDisplayType">
+                <option value="both" selected="selected">Icon with Label</option>
+                <option value="onlyLabel">Only Label</option>
+                <option value="onlyIcon">Only Icon</option>
+            </select>
+        </div>
+
+        <button id="saveButton">Save</button>
+
+        <span id="messageSpan"></span>
+    </div>
+</body>
+
+<script src="options.js"></script>
+</html>

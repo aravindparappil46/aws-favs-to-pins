@@ -1,6 +1,17 @@
 
 // ------- Main Driver Begins ---------
 
+let pinCount;
+let pinDisplayType;
+
+// Get values from local storage
+// Default for number of pins = 7
+// Default for display type = both label and icon
+chrome.storage.sync.get({ "numOfPins": 7, "pinDisplayType": "both" }, function (options) {
+    pinCount = options.numOfPins;
+    pinDisplayType = options.pinDisplayType;
+});
+
 /*
 * Check regularly until the required div appears on the page
 */
@@ -35,12 +46,24 @@ function createPinsFromFavs() {
 
     for (li of favs) {
         const favService = li.firstChild;
-
+        const icon = favService.getElementsByTagName('i')[0]
+        const label = favService.getElementsByTagName('span')[0]
+    
         let pin = document.createElement("div");
         pin.className = "pin-style"
-        pin.append(favService);
+        
+        switch (pinDisplayType) {
+            case "onlyLabel" :
+                favService.removeChild(icon)
+                break;
+            case "onlyIcon" :
+                favService.removeChild(label)
+                break;
+        }
 
-        if (pins.length < 7) {
+        pin.append(favService)
+
+        if (pins.length < pinCount) {
             pins.push(pin)
         } else {
             break;

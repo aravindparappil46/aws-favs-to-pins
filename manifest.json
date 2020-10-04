@@ -1,8 +1,15 @@
 {
   "name": "AWS Favorites To Pins",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Pick up AWS services from favorites list and make them into pins on the header as they should be!",
   "manifest_version": 2,
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": false
+  },
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
       "matches": [
