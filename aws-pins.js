@@ -38,7 +38,8 @@ function addPinsToHeader(pins) {
 * Iterate over favorites list elements
 * and create divs for the pins. Each div contains an anchor 
 * that navigates to respective AWS service.
-* Only adds first 7 fav services as pins
+* Number of pins to be added is decided based upon user's 
+* selection from Options page, so is the display type
 */
 function createPinsFromFavs() {
     const favs = getAllFavs()
