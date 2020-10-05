@@ -5,3 +5,7 @@
     font-size: 12px;
     cursor: pointer;
 }
+
+.align-label-center {
+    align-self: center;
+}

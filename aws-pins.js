@@ -55,6 +55,7 @@ function createPinsFromFavs() {
         
         switch (pinDisplayType) {
             case "onlyLabel" :
+                pin.classList.add("align-label-center")
                 favService.removeChild(icon)
                 break;
             case "onlyIcon" :
