@@ -3,7 +3,7 @@ const button = document.getElementById('saveButton');
 const message = document.getElementById('messageSpan');
 const pinDisplayType = document.getElementById('pinDisplayType');
 
-chrome.storage.sync.get(function (options) {
+chrome.storage.sync.get({ "numOfPins": 7, "pinDisplayType": "both" }, function (options) {
     input.value = options.numOfPins;
     pinDisplayType.value = options.pinDisplayType;
 });
