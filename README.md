@@ -20,4 +20,4 @@ By default, the number of pins is 7 & both icon and label are shown for the pins
 Huge thanks to [Felix Breidenstein](https://github.com/fleaz) for fixing the bug where pins were not showing up occasionally, for including more URL paths to be matched and for kickstarting the effort to make this extension configurable!
 
 # Limitations
-- Favorites menu is alphabetically ordered and only the top 7 of them are picked to be pins. Can't pick and choose to our liking
+- Favorites menu is alphabetically ordered. Can't reorder according to our liking
